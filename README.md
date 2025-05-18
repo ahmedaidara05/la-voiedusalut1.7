@@ -1,1 +1,1 @@
-# la-voiedusalut1.7
+"La Voie du Salut" est une application web progressive (PWA) conçue comme un livre numérique interactif, offrant une expérience immersive pour lire, explorer et interagir avec le contenu spirituel et narratif du livre. L’application combine un design moderne (glassmorphism, animations fluides, gradient jaune/orange), des fonctionnalités avancées (authentification, IA, lecture vocale, favoris, multilingue), et des protections anti-copie.# la-voiedusalut1.7
