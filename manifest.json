@@ -1,0 +1,20 @@
+{
+    "name": "La Voie du Salut",
+    "short_name": "Voie du Salut",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#1a1a1a",
+    "theme_color": "#8b0000",
+    "icons": [
+        {
+            "src": "logo.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "logo.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
