@@ -492,5 +492,52 @@
     <script src="script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script>
+    const chapterCards = document.querySelectorAll(".chapter-card");
+    const sections = document.querySelectorAll(".section");
+    const lectureSection = document.getElementById("lecture");
+    const chapterSections = document.querySelectorAll(".chapter-section");
+    const navIcons = document.querySelectorAll(".icon[data-nav]");
+
+    // Navigation dynamique
+    function showSection(sectionId) {
+        sections.forEach(s => s.classList.remove("active"));
+        document.getElementById(sectionId).classList.add("active");
+
+        // Met à jour la barre de navigation
+        navIcons.forEach(icon => {
+            icon.classList.toggle("active", icon.dataset.nav === sectionId);
+        });
+    }
+
+    // Gérer les clics sur les chapitres du sommaire
+    chapterCards.forEach(card => {
+        card.addEventListener("click", () => {
+            const chapterNumber = card.dataset.chapter;
+            // Masquer tous les chapitres
+            chapterSections.forEach(section => section.style.display = "none");
+
+            // Afficher uniquement le chapitre cliqué
+            const selectedChapter = document.getElementById(`chapter${chapterNumber}`);
+            if (selectedChapter) {
+                selectedChapter.style.display = "block";
+            }
+
+            // Aller à la section lecture
+            showSection("lecture");
+        });
+    });
+
+    // Bouton retour pour revenir au sommaire
+    document.getElementById("back-btn").addEventListener("click", () => {
+        showSection("sommaire");
+    });
+
+    // Initialisation : afficher uniquement le premier chapitre
+    window.addEventListener("DOMContentLoaded", () => {
+        chapterSections.forEach(section => section.style.display = "none");
+    });
+</script>
+
 </body>
 </html>
